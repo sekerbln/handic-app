@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizers",
+  "info": {
+    "singularName": "organizer",
+    "pluralName": "organizers",
+    "displayName": "Organizer"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "NGO / NPO",
+        "Government Agency",
+        "Educational Institution",
+        "Enterprise",
+        "Cultural / Arts Organization",
+        "Sports Club / Association",
+        "Individual Organizer",
+        "Other"
+      ]
+    },
+    "website": {
+      "type": "string"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": true,
+      "component": "custom-components.address"
+    },
+    "contactEmail": {
+      "type": "email"
+    },
+    "contactPhone": {
+      "type": "string"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

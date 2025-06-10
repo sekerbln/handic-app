@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tickets",
+  "info": {
+    "singularName": "ticket",
+    "pluralName": "tickets",
+    "displayName": "Ticket"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "statusOfTheTicket": {
+      "type": "enumeration",
+      "enum": [
+        "available",
+        "sold out",
+        "reserved"
+      ],
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "format": {
+      "type": "enumeration",
+      "enum": [
+        "digital",
+        "paper",
+        "QR code"
+      ]
+    },
+    "zone": {
+      "type": "string"
+    },
+    "seat": {
+      "type": "string"
+    },
+    "refundPolicy": {
+      "type": "text"
+    },
+    "ticketType": {
+      "type": "enumeration",
+      "enum": [
+        "Standard",
+        "Accessible",
+        "Companion",
+        "Volunteer"
+      ]
+    }
+  }
+}
