@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companions",
+  "info": {
+    "singularName": "companion",
+    "pluralName": "companions",
+    "displayName": "Companion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "companion"
+    }
+  }
+}

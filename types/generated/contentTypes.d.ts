@@ -434,6 +434,40 @@ export interface ApiAccessibilityNeedAccessibilityNeed
   };
 }
 
+export interface ApiCompanionCompanion extends Struct.CollectionTypeSchema {
+  collectionName: 'companions';
+  info: {
+    description: '';
+    displayName: 'Companion';
+    pluralName: 'companions';
+    singularName: 'companion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    firstName: Schema.Attribute.String & Schema.Attribute.Required;
+    lastName: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::companion.companion'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
 export interface ApiDisabilityCardDisabilityCard
   extends Struct.CollectionTypeSchema {
   collectionName: 'disability_cards';
@@ -713,6 +747,32 @@ export interface ApiOrganizerOrganizer extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     website: Schema.Attribute.String;
+  };
+}
+
+export interface ApiTestTest extends Struct.CollectionTypeSchema {
+  collectionName: 'tests';
+  info: {
+    displayName: 'test';
+    pluralName: 'tests';
+    singularName: 'test';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::test.test'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    statusOf: Schema.Attribute.Boolean;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1214,6 +1274,10 @@ export interface PluginUsersPermissionsUser
   attributes: {
     birthday: Schema.Attribute.Date & Schema.Attribute.Required;
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    companion: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::companion.companion'
+    >;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
     confirmed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
@@ -1286,10 +1350,12 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::accessibility-feature.accessibility-feature': ApiAccessibilityFeatureAccessibilityFeature;
       'api::accessibility-need.accessibility-need': ApiAccessibilityNeedAccessibilityNeed;
+      'api::companion.companion': ApiCompanionCompanion;
       'api::disability-card.disability-card': ApiDisabilityCardDisabilityCard;
       'api::event.event': ApiEventEvent;
       'api::location.location': ApiLocationLocation;
       'api::organizer.organizer': ApiOrganizerOrganizer;
+      'api::test.test': ApiTestTest;
       'api::ticket.ticket': ApiTicketTicket;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
