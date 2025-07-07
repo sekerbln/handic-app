@@ -1,0 +1,21 @@
+{
+  "eventList": "Event List",
+  "loading": "Loading...",
+  "noEvents": "No events found.",
+  "noName": "No Name",
+  "start": "Start",
+  "noDescription": "No description available.",
+  "viewDetails": "View Details",
+  "eventNotFound": "Event not found.",
+  "eventType": "Event Type",
+  "tags": "Tags",
+  "language": "Language",
+  "maxCapacity": "Max Capacity",
+  "end": "End",
+  "website": "Website",
+  "description": "Description",
+  "backToEventList": "← Back to Event List",
+  "location": "Location",
+  "viewProfile": "Profile",
+  "logout": "Logout"
+}

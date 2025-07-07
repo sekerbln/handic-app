@@ -1,0 +1,228 @@
+.event-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    padding-top: 6rem;
+}
+
+.event-list-grid {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.event-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 250px;
+    text-align: left;
+}
+
+.event-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.detail-button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.detail-button:active {
+    transform: scale(0.98);
+}
+
+.detail-button:hover {
+    background-color: #0056b3;
+}
+
+.event-input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.user-info p {
+    margin: 0;
+}
+
+.user-info button {
+    margin-left: 10px;
+}
+
+.top-button {
+    text-decoration: none;
+    color: #333;
+    background-color: #ffffff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: background 0.3s;
+    cursor: pointer;
+    font-size: 14px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-button:hover {
+    background-color: #f0f0f0;
+}
+
+.top-button:active {
+    transform: scale(0.98);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    flex-wrap: wrap;
+}
+
+.app-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: #333;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.navbar-right button,
+.navbar-right .language-switcher button,
+.language-switcher button {
+    padding: 0.4rem 0.8rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.navbar-right button:hover,
+.navbar-right .language-switcher button:hover,
+.language-switcher button:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navbar-right {
+        margin-top: 0.5rem;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+
+    .app-title {
+        font-size: 16px;
+    }
+}
+
+.form-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+.form-message {
+    margin-top: 1rem;
+    color: #d9534f;
+    font-weight: bold;
+    text-align: center;
+}
+
+.register-container {
+    max-width: 400px;
+    margin: 80px auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    background-color: #fff;
+    font-family: sans-serif;
+}
+
+.register-input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.register-button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+}
+

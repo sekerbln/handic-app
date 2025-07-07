@@ -1,0 +1,28 @@
+.lang-switcher {
+    display: inline-flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.lang-switcher button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #f4f4f4;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+    outline: none;
+}
+
+.lang-switcher button:hover {
+    background: #e0e0e0;
+}
+
+.lang-switcher button.active {
+    background: #007bff;
+    color: #fff;
+}

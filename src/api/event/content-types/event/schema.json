@@ -16,14 +16,6 @@
     }
   },
   "attributes": {
-    "Description": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "Name": {
       "type": "string",
       "required": true,
@@ -44,7 +36,7 @@
     },
     "EndTime": {
       "type": "datetime",
-      "required": true,
+      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -60,30 +52,14 @@
         "Info Session",
         "Other events"
       ],
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "Media": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "MaxCap": {
-      "type": "integer",
-      "required": false,
+    "Description": {
+      "type": "text",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -118,6 +94,28 @@
         }
       }
     },
+    "MaxCap": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "SeatMaps": {
       "type": "media",
       "multiple": true,
@@ -132,11 +130,15 @@
         }
       }
     },
-    "locations": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::location.location",
-      "mappedBy": "events"
+    "location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "custom-components.address"
+    },
+    "eventUid": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

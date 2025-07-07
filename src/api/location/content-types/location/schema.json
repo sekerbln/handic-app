@@ -86,12 +86,6 @@
         }
       }
     },
-    "events": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::event.event",
-      "inversedBy": "locations"
-    },
     "contactData": {
       "type": "component",
       "repeatable": false,

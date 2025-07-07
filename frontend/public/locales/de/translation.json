@@ -1,0 +1,21 @@
+{
+  "eventList": "Veranstaltungsliste",
+  "loading": "Lade...",
+  "noEvents": "Keine Veranstaltungen gefunden.",
+  "noName": "Kein Name",
+  "start": "Beginn",
+  "noDescription": "Keine Beschreibung verfügbar.",
+  "viewDetails": "Details anzeigen",
+  "eventNotFound": "Veranstaltung nicht gefunden.",
+  "eventType": "Veranstaltungsart",
+  "tags": "Stichwörter",
+  "language": "Sprache",
+  "maxCapacity": "Maximale Kapazität",
+  "end": "Ende",
+  "website": "Webseite",
+  "description": "Beschreibung",
+  "backToEventList": "← Zurück zur Veranstaltungsübersicht",
+  "location": "Ort",
+  "viewProfile": "Profil",
+  "logout": "Abmelden"
+}

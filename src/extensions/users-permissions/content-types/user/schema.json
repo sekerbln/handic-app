@@ -103,6 +103,27 @@
       "relation": "oneToOne",
       "target": "api::companion.companion",
       "inversedBy": "user"
+    },
+    "preferredRole": {
+      "type": "enumeration",
+      "enum": [
+        "disabled_person",
+        "companion",
+        "event_organizer",
+        "location_owner"
+      ],
+      "required": true
+    },
+    "disability_proof_file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

@@ -538,7 +538,6 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
         };
       }>;
     EndTime: Schema.Attribute.DateTime &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -552,6 +551,9 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    eventUid: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     Language: Schema.Attribute.Enumeration<['German', 'English']> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -560,10 +562,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
-    locations: Schema.Attribute.Relation<
-      'manyToMany',
-      'api::location.location'
-    >;
+    location: Schema.Attribute.Component<'custom-components.address', false>;
     MaxCap: Schema.Attribute.Integer &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -652,7 +651,6 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    events: Schema.Attribute.Relation<'manyToMany', 'api::event.event'>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1287,6 +1285,9 @@ export interface PluginUsersPermissionsUser
       'oneToOne',
       'api::disability-card.disability-card'
     >;
+    disability_proof_file: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     email: Schema.Attribute.Email &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -1319,6 +1320,10 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    preferredRole: Schema.Attribute.Enumeration<
+      ['disabled_person', 'companion', 'event_organizer', 'location_owner']
+    > &
+      Schema.Attribute.Required;
     provider: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     resetPasswordToken: Schema.Attribute.String & Schema.Attribute.Private;
