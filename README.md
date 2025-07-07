@@ -82,3 +82,27 @@ Use these test user credentials on the frontend login page (`/user-login`):
 
 * **Email**: `joe@gmail.com`
 * **Password**: `BigSpecial`
+
+# User Flow (Registration to Login)
+
+## 1. User Registration
+
+* **Go to:** `/register`
+* **Action:** Fill out the registration form and submit.
+* **Outcome:** After successful registration, the user is redirected to the homepage (`/`).
+
+## 2. User Login
+
+* **Go to:** `/user-login`
+* **Action:** Enter credentials and submit.
+* **Outcome:** After successful login, the user is redirected to the homepage (`/`).
+
+---
+
+# Using the App
+
+Once logged in or registered and on the homepage, users can:
+
+* **Browse Events:** View available event listings.
+* **View Details:** Click on an event to see its detailed information.
+* **Manage Profile:** Access and update personal information via the "Profile" page.
