@@ -1,7 +1,14 @@
-/**
- * event router
- */
+'use strict';
 
-import { factories } from '@strapi/strapi';
+const { factories } = require('@strapi/strapi');
 
-export default factories.createCoreRouter('api::event.event');
+module.exports = factories.createCoreRouter('api::event.event', {
+    config: {
+        find: {
+            auth: false,
+        },
+        findOne: {
+            auth: false,
+        },
+    },
+});
